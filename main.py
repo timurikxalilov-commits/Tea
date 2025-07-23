@@ -4,10 +4,23 @@ from telegram.ext import (
     filters, ContextTypes, ConversationHandler
 )
 import asyncio
+from flask import Flask
+import threading
+import time
 
 # 🔧 Конфигурация
 MASTER_CHAT_ID = 5225197085
 TOKEN = "7436013012:AAFmxpR03fQC_VOj_pWKhyfaK43FohaPNoE"
+
+# Flask веб-сервер для хостинга (чтобы слушать порт)
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Bot is running"
+
+def run_flask():
+    app.run(host='0.0.0.0', port=8080)
 
 # 📂 Память отзывов
 last_reviews = []
@@ -177,6 +190,9 @@ async def unknown(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # ▶️ MAIN
 def main():
+    # Запускаем Flask сервер в отдельном потоке, чтобы слушать порт 8080
+    threading.Thread(target=run_flask).start()
+
     app = ApplicationBuilder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
