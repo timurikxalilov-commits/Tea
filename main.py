@@ -7,7 +7,7 @@ import asyncio
 
 # 🔧 Конфигурация
 MASTER_CHAT_ID = 5225197085
-TOKEN = "7436013012:AAHq7FIRs5kJhaRIPkwV0bTF83-WdMPe4LY"
+TOKEN = "7436013012:AAFmxpR03fQC_VOj_pWKhyfaK43FohaPNoE"
 
 # 📂 Память отзывов
 last_reviews = []
