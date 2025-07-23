@@ -29,7 +29,7 @@ NAME, DATE, PLACE, COMMENTS, REVIEW = range(5)
 # --- Обработчики
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
-        ["🧘 О практике", "📅 Записаться (24.08.2025г.)"],
+        ["🧘 О практике", "📅 Записаться"],
         ["💬 Отзывы", "🤝 Поддержать проект"],
         ["📲 Связь с мастером"]
     ]
@@ -85,7 +85,7 @@ async def get_comments(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"📅 Время: {context.user_data['date']}\n"
         f"📍 Место: {context.user_data['place']}\n"
         f"💬 Пожелания: {context.user_data['comments']}\n"
-        f"Telegram: @{user.username or 'нет'}"
+        f"Telegram: @{user.username}"
     )
 
     await context.bot.send_message(chat_id=MASTER_CHAT_ID, text=text, parse_mode="Markdown")
