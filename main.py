@@ -72,7 +72,7 @@ async def get_date(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def get_place(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data['place'] = update.message.text
-    await update.message.reply_text("Есть пожелания или вопросы?")
+    await update.message.reply_text("Есть пожелания или вопросы? Если нет то просто укажи свой номер телефона📱")
     return COMMENTS
 
 async def get_comments(update: Update, context: ContextTypes.DEFAULT_TYPE):
