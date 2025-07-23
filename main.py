@@ -29,7 +29,7 @@ NAME, DATE, PLACE, COMMENTS, REVIEW = range(5)
 # --- Обработчики
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
-        ["🧘 О практике", "📅 Записаться"],
+        ["🧘 О практике", "📅 Записаться(с 24.08.2025г."],
         ["💬 Отзывы", "🤝 Поддержать проект"],
         ["📲 Связь с мастером"]
     ]
@@ -67,7 +67,7 @@ async def get_name(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def get_date(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data['date'] = update.message.text
-    await update.message.reply_text("Где провести? (дома, на природе и т.д.)")
+    await update.message.reply_text("Где провести? (дома, на природе или у меня в гостях?)")
     return PLACE
 
 async def get_place(update: Update, context: ContextTypes.DEFAULT_TYPE):
