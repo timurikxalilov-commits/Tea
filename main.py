@@ -10,7 +10,7 @@ import random
 
 # 🔧 Конфигурация
 MASTER_CHAT_ID = 5225197085
-TOKEN = "7436013012:AAFmxpR03fQC_VOj_pWKhyfaK43FohaPNoE"
+TOKEN = "7436013012:AAFyD5YEYS7toek2quD8P7N71lmiYz_RwtY"
 
 # 📜 Цитаты чайного пьяницы
 TEA_QUOTES = [
